@@ -1,0 +1,44 @@
+body{
+    width: auto;
+}
+
+header{
+    background-color: #f8b917;
+}
+
+.introduction{
+    background-color: #121215;
+    color: #f8b917;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    font-family: 'Kenia', cursive;
+    font-family: 'Miltonian Tattoo', cursive;
+    
+}
+
+address{
+
+    display: flex;
+    justify-content: space-around;
+}
+
+#artist-name{
+
+    background-color: #f8b917;
+    color:#121215;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+    margin-bottom: 2em;
+    border-radius: 25px;
+}
+
+#gallery{
+    display: flex;
+    justify-content: center;
+}
