@@ -1,10 +1,16 @@
 body{
     width: auto;
+    margin: 0;
+    background-color: #f8b917;
 }
 
 header{
     background-color: #f8b917;
+    padding: 0.7em;
+
 }
+
+
 
 .introduction{
     background-color: #121215;
@@ -14,9 +20,12 @@ header{
     align-items: center;
 }
 
+
+
 h1{
     font-family: 'Kenia', cursive;
     font-family: 'Miltonian Tattoo', cursive;
+    font-size: 2em;
     
 }
 
@@ -26,6 +35,12 @@ address{
     justify-content: space-around;
 }
 
+address a {
+
+    color: white;
+    font-size: 1.5em;
+}
+
 #artist-name{
 
     background-color: #f8b917;
@@ -33,12 +48,47 @@ address{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1em;
+    padding: 0.5em 1em;
     margin-bottom: 2em;
     border-radius: 25px;
+    
+}
+
+#artist-name h2 {
+    margin: 0;
+    align-self: center;
+}
+
+#artist-name p {
+    margin: 0;
 }
 
 #gallery{
+    background-color: #f8b917;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#gallery h2{
     display: flex;
     justify-content: center;
+    padding: 2em;
+    margin:0;
+}
+
+figure {
+    margin: 0;
+    
+}
+
+.npf_row figure img {
+   width: 100%;
+  
+}
+
+footer{
+    background-color: #f8b917;
+    margin: 0;
 }
