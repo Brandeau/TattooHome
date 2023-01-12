@@ -1,12 +1,17 @@
+@font-face {
+    font-family: "TattooShop";
+    src: url(assets/fonts/tattoo_shop.otf);
+}
+
 body{
     width: auto;
     margin: 0;
-    background-color: #f8b917;
+    background-color: #121215;
 }
 
 header{
-    background-color: #f8b917;
-    padding: 0.7em;
+    background-color: #121215;
+    padding: 2em;
 
 }
 
@@ -14,19 +19,35 @@ header{
 
 .introduction{
     background-color: #121215;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+                       rgba(0, 0, 0, 0.9)), url("cat.jpeg");
+    background-blend-mode: luminosity;
+    justify-content: center;
+    background-position-x: 25%;
+    background-position-y: 25%;
+    background-size: cover;
     color: #f8b917;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 500px;
+    clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);
 }
 
 
 
 h1{
-    font-family: 'Kenia', cursive;
-    font-family: 'Miltonian Tattoo', cursive;
-    font-size: 2em;
+    font-family: "TattooShop", sans-serif;
+    font-size: 4em;
     
+}
+
+h1::after{
+    content: "Patricia Yáñez";
+    font-family: 'Kenia', sans-serif;
+    display: block;
+    font-size: 0.5em;
+    letter-spacing: 0.2em;
 }
 
 address{
@@ -39,32 +60,20 @@ address a {
 
     color: white;
     font-size: 1.5em;
+    font-family: 'Oswald', sans-serif;
+    font-style: normal;
+    text-decoration: none;
 }
 
-#artist-name{
-
-    background-color: #f8b917;
-    color:#121215;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0.5em 1em;
-    margin-bottom: 2em;
-    border-radius: 25px;
-    
-}
-
-#artist-name h2 {
+.introduction p {
     margin: 0;
-    align-self: center;
-}
-
-#artist-name p {
-    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    font-size: 2em;
 }
 
 #gallery{
-    background-color: #f8b917;
+    background-color: #121215;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -76,6 +85,9 @@ address a {
     justify-content: center;
     padding: 2em;
     margin:0;
+    color:#f8b917;
+    font-family: 'Kenia', sans-serif;
+    font-size: 2em;
 }
 
 figure {
