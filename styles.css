@@ -6,7 +6,7 @@
 body{
     width: auto;
     margin: 0;
-    background-color: #121215;
+    background-color: white;
 }
 
 header{
@@ -30,8 +30,8 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 500px;
-    clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);
+    height: 90vh;
+    /*clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);*/
 }
 
 
@@ -54,6 +54,7 @@ address{
 
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 address a {
@@ -73,7 +74,7 @@ address a {
 }
 
 #gallery{
-    background-color: #121215;
+    background-color: white;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -85,8 +86,8 @@ address a {
     justify-content: center;
     padding: 2em;
     margin:0;
-    color:#f8b917;
-    font-family: 'Kenia', sans-serif;
+    color:#121215;
+    font-family: 'Oswald', sans-serif;
     font-size: 2em;
 }
 
