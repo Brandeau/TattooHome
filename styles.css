@@ -122,14 +122,63 @@ address a {
     cursor: pointer;
 }
 
-figure {
-    margin: 0;
-    
-}
-
 .npf_row figure img {
    width: 100%;
-  
+   scroll-snap-align: start;
+ 
+}
+
+.npf_row{
+    position: relative;
+    display: flex;
+}
+
+.tmblr-full{
+
+    margin: 0;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    position: relative;
+}
+
+.tmblr-full::-webkit-scrollbar{
+    display: none;
+  }
+
+#arrow-wrapper-right{
+    position: absolute;
+    height: 100%;
+    width: 15%;
+    z-index: 2;
+    background-color: black;
+    opacity: 20%;
+    right: 0;
+  }
+
+  #arrow-wrapper-left{
+    position: absolute;
+    height: 100%;
+    width: 15%;
+    z-index: 2;
+    background-color: black;
+    opacity: 20%;
+  }
+
+.fa-chevron-left{
+    color: white;
+    top: 50%;
+    font-size: 3em;
+    left: 20%;
+    position: absolute;
+}
+
+.fa-chevron-right{
+    color: white;
+    top: 50%;
+    font-size: 3em;
+    right: 20%;
+    position: absolute;
 }
 
 footer{
@@ -149,4 +198,3 @@ footer p{
 #about p{
     text-align: justify;
 }
-
