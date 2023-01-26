@@ -6,7 +6,7 @@
 body{
     width: auto;
     margin: 0;
-    background-color: white;
+    background-color: hsl(49, 26%, 94%);
 }
 
 header{
@@ -20,7 +20,7 @@ header{
 .introduction{
     background-color: #121215;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-                       rgba(0, 0, 0, 0.9)), url("assets/images/lobo.jpeg");
+                       rgba(0, 0, 0, 0.9)), url("assets/graphics/lobo.jpeg");
     background-blend-mode: luminosity;
     justify-content: center;
     background-position-x: 25%;
@@ -41,6 +41,7 @@ h1{
     font-size: 4em;
     
 }
+
 
 h1::after{
     content: "Patricia Yáñez";
@@ -71,6 +72,13 @@ address a {
     font-family: 'Oswald', sans-serif;
     color: white;
     font-size: 2em;
+}
+
+#about {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #gallery{
@@ -207,11 +215,20 @@ address a {
 footer{
     background-color: #f8b917;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em;
 }
 
 footer p{
     margin:0;
     padding: 2em;
+}
+
+footer img{
+
+    max-width: 3em;
 }
 
 #about{
@@ -221,3 +238,4 @@ footer p{
 #about p{
     text-align: justify;
 }
+
