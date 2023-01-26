@@ -20,7 +20,7 @@ header{
 .introduction{
     background-color: #121215;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-                       rgba(0, 0, 0, 0.9)), url("cat.jpeg");
+                       rgba(0, 0, 0, 0.9)), url("assets/images/lobo.jpeg");
     background-blend-mode: luminosity;
     justify-content: center;
     background-position-x: 25%;
@@ -125,7 +125,7 @@ address a {
 .npf_row figure img {
    width: 100%;
    scroll-snap-align: start;
- 
+    filter: sepia();
 }
 
 .npf_row{
@@ -144,7 +144,8 @@ address a {
 
 .tmblr-full::-webkit-scrollbar{
     display: none;
-  }
+
+}
 
 #arrow-wrapper-right{
     position: absolute;
@@ -152,8 +153,19 @@ address a {
     width: 15%;
     z-index: 2;
     background-color: black;
+    opacity: 10%;
+    right: 0;
+  }
+
+  #arrow-wrapper-right:hover{
+    position: absolute;
+    height: 100%;
+    width: 15%;
+    z-index: 2;
+    background-color: black;
     opacity: 20%;
     right: 0;
+    cursor: pointer;
   }
 
   #arrow-wrapper-left{
@@ -162,7 +174,17 @@ address a {
     width: 15%;
     z-index: 2;
     background-color: black;
+    opacity: 10%;
+  }
+
+  #arrow-wrapper-left:hover{
+    position: absolute;
+    height: 100%;
+    width: 15%;
+    z-index: 2;
+    background-color: black;
     opacity: 20%;
+    cursor: pointer;
   }
 
 .fa-chevron-left{
@@ -172,6 +194,7 @@ address a {
     left: 20%;
     position: absolute;
 }
+
 
 .fa-chevron-right{
     color: white;
