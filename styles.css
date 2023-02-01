@@ -6,27 +6,36 @@
 body{
     width: auto;
     margin: 0;
-    background-color: hsl(49, 26%, 94%);
+    /*background-color: hsl(49, 26%, 94%);*/
+    background-color: #d9d9d9;
+}
+
+#icon{
+
+    max-width: 5em;
+    display: none;
 }
 
 header{
     background-color: #121215;
     padding: 2em;
+    align-items: center;
 
 }
 
 
 
 .introduction{
+    background-size: 100%;
     background-color: #121215;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-                       rgba(0, 0, 0, 0.9)), url("assets/graphics/lobo.jpeg");
+                       rgba(0, 0, 0, 0.5)), url("assets/graphics/tattoo-artist.png");
     background-blend-mode: luminosity;
     justify-content: center;
-    background-position-x: 25%;
-    background-position-y: 25%;
+    background-position-x: 50%;
+    background-position-y: 50%;
     background-size: cover;
-    color: #f8b917;
+    color: #d38604;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,13 +47,15 @@ header{
 
 h1{
     font-family: "TattooShop", sans-serif;
-    font-size: 4em;
-    
+    font-size: 4em;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
 h1::after{
-    content: "Patricia Yáñez";
+    content: "Torrejón de Ardoz";
     font-family: 'Kenia', sans-serif;
     display: block;
     font-size: 0.5em;
@@ -56,6 +67,7 @@ address{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 address a {
@@ -67,11 +79,11 @@ address a {
     text-decoration: none;
 }
 
-.introduction p {
-    margin: 0;
-    font-family: 'Oswald', sans-serif;
-    color: white;
-    font-size: 2em;
+#about p {
+    margin: 10px;
+    font-family: 'futura-pt';
+    color: #121215;
+    font-size: 1em;
 }
 
 #about {
@@ -79,6 +91,12 @@ address a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+#artist-name{
+
+    font-weight: bold;
 }
 
 #gallery{
@@ -114,26 +132,29 @@ address a {
     padding: 0.2em 1em;
     border-radius: 8px;
     margin: 1em 0 2em 0;
-    background-color: lightgray;
+    background-color: #d38604;
     border: none;
+    color: white;
 }
 
 #gallery button:hover{
 
-    background-color: white;
+    background-color: #e3bd96;
     cursor: pointer;
 }
 
 #gallery button:active{
 
-    background-color: white;
+    background-color: #e3bd96;
     cursor: pointer;
 }
 
 .npf_row figure img {
    width: 100%;
+   height: auto;
    scroll-snap-align: start;
-    filter: sepia();
+    filter:grayscale();
+    object-fit: contain;
 }
 
 .npf_row{
@@ -141,7 +162,7 @@ address a {
     display: flex;
 }
 
-.tmblr-full{
+.carrousel{
 
     margin: 0;
     display: flex;
@@ -150,7 +171,7 @@ address a {
     position: relative;
 }
 
-.tmblr-full::-webkit-scrollbar{
+.carrousel::-webkit-scrollbar{
     display: none;
 
 }
@@ -212,8 +233,16 @@ address a {
     position: absolute;
 }
 
+#more{
+
+    padding: 2em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 footer{
-    background-color: #f8b917;
+    background-color: #d38604;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -231,6 +260,11 @@ footer img{
     max-width: 3em;
 }
 
+#icon-footer{
+
+    max-width: 10em;
+}
+
 #about{
     padding: 2em;
 }
@@ -239,3 +273,51 @@ footer img{
     text-align: justify;
 }
 
+#logo{
+    max-width: 70%;
+    filter: invert();
+}
+
+@media (min-width:801px){
+
+    .introduction{
+
+        justify-content: center;
+    }
+
+    #icon{
+        display: initial;
+    }
+
+    #about{
+
+        padding: 7em;
+    }
+
+    #about p{
+
+        max-width: 75%;
+        font-size: 1.5em;
+    }
+
+    #gallery{
+
+        padding:5em;
+    }
+
+    .npf_row{
+
+        max-width: 75%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .npf_row figure img {
+        height: 500px;
+        width: auto;
+        object-fit: contain;
+     }
+
+} 
