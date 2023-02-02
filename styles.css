@@ -10,22 +10,28 @@ body{
     background-color: #d9d9d9;
 }
 
-#icon{
+#site-header-icon{
 
     max-width: 5em;
     display: none;
 }
 
-header{
+#site-header{
     background-color: #121215;
     padding: 2em;
     align-items: center;
 
 }
 
+.fa-whatsapp{
+
+    color:#25d366;
+    font-size: 2em;
+}
 
 
-.introduction{
+
+#introduction{
     background-size: 100%;
     background-color: #121215;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
@@ -62,7 +68,7 @@ h1::after{
     letter-spacing: 0.2em;
 }
 
-address{
+#site-header-address{
 
     display: flex;
     justify-content: space-around;
@@ -70,7 +76,7 @@ address{
     align-items: center;
 }
 
-address a {
+#site-header-address a {
 
     color: white;
     font-size: 1.5em;
@@ -149,7 +155,7 @@ address a {
     cursor: pointer;
 }
 
-.npf_row figure img {
+#images-gallery-wrapper figure img {
    width: 100%;
    height: auto;
    scroll-snap-align: start;
@@ -157,12 +163,12 @@ address a {
     object-fit: contain;
 }
 
-.npf_row{
+#images-gallery-wrapper{
     position: relative;
     display: flex;
 }
 
-.carrousel{
+#carrousel{
 
     margin: 0;
     display: flex;
@@ -171,7 +177,7 @@ address a {
     position: relative;
 }
 
-.carrousel::-webkit-scrollbar{
+#carrousel::-webkit-scrollbar{
     display: none;
 
 }
@@ -233,7 +239,7 @@ address a {
     position: absolute;
 }
 
-#more{
+#gallery-see-more{
 
     padding: 2em 2em;
     display: flex;
@@ -241,7 +247,7 @@ address a {
     justify-content: center;
 }
 
-footer{
+#site-footer{
     background-color: #d38604;
     margin: 0;
     display: flex;
@@ -250,19 +256,19 @@ footer{
     padding: 3em;
 }
 
-footer p{
+#site-footer p{
     margin:0;
     padding: 2em;
 }
 
-footer img{
-
-    max-width: 3em;
-}
-
-#icon-footer{
+#footer-icon{
 
     max-width: 10em;
+}
+
+#github-mark{
+
+    max-width: 3em;
 }
 
 #about{
@@ -273,7 +279,7 @@ footer img{
     text-align: justify;
 }
 
-#logo{
+#introduction-logo{
     max-width: 70%;
     filter: invert();
 }
@@ -285,7 +291,7 @@ footer img{
         justify-content: center;
     }
 
-    #icon{
+    #site-header-icon{
         display: initial;
     }
 
@@ -305,7 +311,7 @@ footer img{
         padding:5em;
     }
 
-    .npf_row{
+    #images-gallery-wrapper{
 
         max-width: 75%;
         display: flex;
@@ -314,7 +320,7 @@ footer img{
 
     }
 
-    .npf_row figure img {
+    #images-gallery-wrapper figure img {
         height: 500px;
         width: auto;
         object-fit: contain;

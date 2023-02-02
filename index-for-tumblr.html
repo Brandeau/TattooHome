@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{Title}</title>
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    {block:Description}
+        <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    <meta name="image:Header" content="{HeaderImage}"/>
+    <meta name="image:Background" content="{BackgroundImage}">
+    <meta name="image:Logo" content="{LogoImage}">
+    <meta name="image:Carrousel1" content="{Carrousel1Image}">
+    <meta name="image:Carrousel2" content="{Carrousel2Image}">
+    <meta name="image:Carrousel3" content="{Carrousel3Image}">
+    <meta name="image:Carrousel4" content="{Carrousel4Image}">
+    <meta name="image:Carrousel5" content="{Carrousel5Image}">
+    <meta name="image:Carrousel6" content="{Carrousel6Image}">
+    <meta name="image:Carrousel7" content="{Carrousel7Image}">
+    <meta name="image:Carrousel8" content="{Carrousel8Image}">
+    <meta name="image:Carrousel9" content="{Carrousel9Image}">
+    <meta name="image:Carrousel10" content="{Carrousel10Image}">
+    <meta name="image:Carrousel11" content="{Carrousel11Image}">
+    <meta name="image:FooterImage" content="{FooterImage}">
+    <meta name="image:githubIcon" content="{githubIcon}">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Kenia&family=Miltonian+Tattoo&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1d3c62beb7.js" crossorigin="anonymous"></script>
+    <style>
+        @font-face {
+    font-family: "TattooShop";
+    src: url(assets/fonts/tattoo_shop.otf);
+}
+
+body{
+    width: auto;
+    margin: 0;
+    /*background-color: hsl(49, 26%, 94%);*/
+    background-color: #d9d9d9;
+}
+
+#site-header-icon{
+
+    max-width: 5em;
+    display: none;
+}
+
+#site-header{
+    background-color: #121215;
+    padding: 2em;
+    align-items: center;
+
+}
+
+.fa-whatsapp{
+
+    color:#25d366;
+    font-size: 2em;
+}
+
+
+
+#introduction{
+    
+    background-size: 100%;
+    background-color: #121215;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+                       rgba(0, 0, 0, 0.5)), url("{image:Background}");
+    background-blend-mode: luminosity;
+    justify-content: center;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-size: cover;
+    color: #d38604;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    /*clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);*/
+}
+
+
+
+h1{
+    font-family: "TattooShop", sans-serif;
+    font-size: 4em;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+h1::after{
+    content: "Torrejón de Ardoz";
+    font-family: 'Kenia', sans-serif;
+    display: block;
+    font-size: 0.5em;
+    letter-spacing: 0.2em;
+}
+
+#site-header-address{
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#site-header-address a {
+
+    color: white;
+    font-size: 1.5em;
+    font-family: 'Oswald', sans-serif;
+    font-style: normal;
+    text-decoration: none;
+}
+
+#about p {
+    margin: 10px;
+    font-family: 'futura-pt';
+    color: #121215;
+    font-size: 1em;
+}
+
+#about {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#artist-name{
+
+    font-weight: bold;
+}
+
+#gallery{
+    background-color: #121215;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+#gallery h2{
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+    margin:0;
+    color:#121215;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2em;
+}
+
+#gallery p{
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+    margin: 1em 0 0 0;
+}
+
+#gallery button{
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+    padding: 0.2em 1em;
+    border-radius: 8px;
+    margin: 1em 0 2em 0;
+    background-color: #d38604;
+    border: none;
+    color: white;
+}
+
+#gallery button:hover{
+
+    background-color: #e3bd96;
+    cursor: pointer;
+}
+
+#gallery button:active{
+
+    background-color: #e3bd96;
+    cursor: pointer;
+}
+
+#images-gallery-wrapper figure img {
+   width: 100%;
+   height: auto;
+   scroll-snap-align: start;
+    filter:grayscale();
+    object-fit: contain;
+}
+
+#images-gallery-wrapper{
+    position: relative;
+    display: flex;
+}
+
+#carrousel{
+
+    margin: 0;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    position: relative;
+}
+
+#carrousel::-webkit-scrollbar{
+    display: none;
+
+}
+
+#arrow-wrapper-right{
+    position: absolute;
+    height: 100%;
+    width: 15%;
+    z-index: 2;
+    background-color: black;
+    opacity: 10%;
+    right: 0;
+  }
+
+  #arrow-wrapper-right:hover{
+    position: absolute;
+    height: 100%;
+    width: 15%;
+    z-index: 2;
+    background-color: black;
+    opacity: 20%;
+    right: 0;
+    cursor: pointer;
+  }
+
+  #arrow-wrapper-left{
+    position: absolute;
+    height: 100%;
+    width: 15%;
+    z-index: 2;
+    background-color: black;
+    opacity: 10%;
+  }
+
+  #arrow-wrapper-left:hover{
+    position: absolute;
+    height: 100%;
+    width: 15%;
+    z-index: 2;
+    background-color: black;
+    opacity: 20%;
+    cursor: pointer;
+  }
+
+.fa-chevron-left{
+    color: white;
+    top: 50%;
+    font-size: 3em;
+    left: 20%;
+    position: absolute;
+}
+
+
+.fa-chevron-right{
+    color: white;
+    top: 50%;
+    font-size: 3em;
+    right: 20%;
+    position: absolute;
+}
+
+#gallery-see-more{
+
+    padding: 2em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#site-footer{
+    background-color: #d38604;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em;
+}
+
+#site-footer p{
+    margin:0;
+    padding: 2em;
+}
+
+#footer-icon{
+
+    max-width: 10em;
+}
+
+#github-mark{
+
+    max-width: 3em;
+}
+
+#about{
+    padding: 2em;
+}
+
+#about p{
+    text-align: justify;
+}
+
+#introduction-logo{
+    max-width: 70%;
+    filter: invert();
+}
+
+@media (min-width:801px){
+
+    .introduction{
+
+        justify-content: center;
+    }
+
+    #site-header-icon{
+        display: initial;
+    }
+
+    #about{
+
+        padding: 7em;
+    }
+
+    #about p{
+
+        max-width: 75%;
+        font-size: 1.5em;
+    }
+
+    #gallery{
+
+        padding:5em;
+    }
+
+    #images-gallery-wrapper{
+
+        max-width: 75%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    #images-gallery-wrapper figure img {
+        height: 500px;
+        width: auto;
+        object-fit: contain;
+     }
+
+} 
+    </style>
+</head>
+<body>
+    <header id="site-header">
+        <address id="site-header-address">
+            <img src="{HeaderImage}" id="site-header-icon">
+            <a href="mailto:contacto.tattoohome@gmail.com">contacto.tattoohome@gmail.com</a>
+            <section id="site-header-phone">
+                <i class="fa-brands fa-whatsapp"></i>
+                <a href="tel:640394026">+34 640394026</a>
+            </section>
+        </address>
+    </header>
+    <main>
+        <section id="intro-about-container">
+            <section id="introduction">
+                <h1><img src="{image:Logo}" alt="Tattoo Home" id="introduction-logo"></h1>
+            </section>
+            <section id="about">
+                <h2>ARTISTA</h2>
+                <p id="artist-name">Patricia Yáñez</p>
+                <p>Interesada desde muy temprana edad en el dibujo y la pintura, descubrió tarde su pasión por el tatuaje. Ahora busca recuperar el tiempo perdido grabando en la piel de las personas sus deseos, ideales y recuerdos. Artista autodidacta que realiza tatuajes Old School, Tribales, puntillismo, minimalista, Kawaii tattoo, Geométrico, tattoo blackwork. </p>
+            </section>
+        </section>
+        <section id="gallery">
+            <div id="images-gallery-wrapper">
+                <div id="arrow-wrapper-left">
+                    <i class="fa-solid fa-chevron-left" id="right-arrow"></i>
+                </div>
+                <figure id="carrousel">
+                    <img src="{image:Carrousel1}" class="gallery-images">
+                    <img src="{image:Carrousel2}" class="gallery-images">
+                    <img src="{image:Carrousel3}" class="gallery-images">
+                    <img src="{image:Carrousel4}" class="gallery-images">
+                    <img src="{image:Carrousel5}" class="gallery-images">
+                    <img src="{image:Carrousel6}" class="gallery-images">
+                    <img src="{image:Carrousel7}" class="gallery-images">
+                    <img src="{image:Carrousel8}" class="gallery-images">
+                    <img src="{image:Carrousel9}" class="gallery-images">
+                    <img src="{image:Carrousel10}" class="gallery-images">
+                    <img src="{image:Carrousel11}" class="gallery-images">
+                    
+                </figure>
+                <div id="arrow-wrapper-right">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+            <section id="gallery-see-more">
+                <p>¿Quieres ver más de mi trabajo?</p>
+                <button>Ver más fotos</button>
+            </section>
+        </section>
+    </main>
+    <footer id="site-footer">
+        <img src="{image:FooterImage}" id="footer-icon">
+        <p>©2023 by Brandeau</p>
+        <a href="https://github.com/Brandeau" target="_blank"><img src="{image:githubIcon}" id="github-mark"></a>
+    </footer>
+</body>
+<script>
+    const leftArrowWrapper = document.getElementById("arrow-wrapper-left");
+const rightArrowWrapper = document.getElementById("arrow-wrapper-right");
+const gallery = document.getElementById("carrousel");
+const numOfImages = document.querySelectorAll(".gallery-images").length;
+
+function scrollToTheRight() {
+
+    gallery.scrollBy({
+      left: gallery.offsetWidth / (numOfImages - 1),
+      top: 0,
+      behavior: "smooth",
+    });
+
+}
+
+function scrollToTheLeft() {
+ 
+    gallery.scrollBy({
+      left: -(gallery.offsetWidth / (numOfImages - 1)),
+      top: 0,
+      behavior: "smooth",
+    });
+  
+
+  console.log(gallery.scrollTop);
+}
+
+leftArrowWrapper.addEventListener("click", scrollToTheLeft);
+
+rightArrowWrapper.addEventListener("click", scrollToTheRight);
+</script>
+</html>

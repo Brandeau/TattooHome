@@ -12,17 +12,20 @@
     <script src="https://kit.fontawesome.com/1d3c62beb7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <address>
-            <img src="assets/graphics/tattoo-home-mushroom-logo-color.png" id="icon">
+    <header id="site-header">
+        <address id="site-header-address">
+            <img src="assets/graphics/tattoo-home-mushroom-logo-color.png" id="site-header-icon">
             <a href="mailto:contacto.tattoohome@gmail.com">contacto.tattoohome@gmail.com</a>
-            <a href="tel:640394026">+34 640394026</a>
+            <section id="site-header-phone">
+                <i class="fa-brands fa-whatsapp"></i>
+                <a href="tel:640394026">+34 640394026</a>
+            </section>
         </address>
     </header>
     <main>
         <section id="intro-about-container">
-            <section class="introduction">
-                <h1><img src="assets/graphics/tattoo-home-mushroom-logo-bw.png" alt="Tattoo Home" id="logo"></h1>
+            <section id="introduction">
+                <h1><img src="assets/graphics/tattoo-home-mushroom-logo-bw.png" alt="Tattoo Home" id="introduction-logo"></h1>
             </section>
             <section id="about">
                 <h2>ARTISTA</h2>
@@ -31,11 +34,11 @@
             </section>
         </section>
         <section id="gallery">
-            <div class="npf_row">
+            <div id="images-gallery-wrapper">
                 <div id="arrow-wrapper-left">
                     <i class="fa-solid fa-chevron-left" id="right-arrow"></i>
                 </div>
-                <figure class="carrousel" id="carrousel">
+                <figure id="carrousel">
                     <img class="gallery-images" src="assets/graphics/cat.jpeg">
                     <img class="gallery-images" src="assets/graphics/dexter.jpeg">
                     <img class="gallery-images" src="assets/graphics/monjaesqueleto.jpeg">
@@ -52,16 +55,16 @@
                     <i class="fa-solid fa-chevron-right"></i>
                 </div>
             </div>
-            <section id="more">
+            <section id="gallery-see-more">
                 <p>¿Quieres ver más de mi trabajo?</p>
                 <button>Ver más fotos</button>
             </section>
         </section>
     </main>
-    <footer>
-        <img src="assets/graphics/tattoo-home-mushroom-logo-bw.png" id="icon-footer">
+    <footer id="site-footer">
+        <img src="assets/graphics/tattoo-home-mushroom-logo-bw.png" id="footer-icon">
         <p>©2023 by Brandeau</p>
-        <a href="https://github.com/Brandeau" target="_blank"><img src="assets/graphics/github-mark.png"></a>
+        <a href="https://github.com/Brandeau" target="_blank"><img src="assets/graphics/github-mark.png" id="github-mark"></a>
     </footer>
 </body>
 <script src='script.js'></script>
