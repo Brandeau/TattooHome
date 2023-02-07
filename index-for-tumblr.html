@@ -27,9 +27,8 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>     <script src="https://kit.fontawesome.com/1d3c62beb7.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Kenia&family=Miltonian+Tattoo&family=Oswald:wght@500&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/1d3c62beb7.js" crossorigin="anonymous"></script>
     <style>
         @font-face {
     font-family: "TattooShop";
@@ -318,6 +317,47 @@ h1::after{
     filter: invert();
 }
 
+#gallery-all{
+         
+         display:flex;
+         flex-wrap:wrap;
+     }
+     
+     #gallery-all .npf_row{
+         
+         margin: 10px;
+         width: 100%;
+         height: auto;
+     }
+     
+     .polaroid-frame{
+         
+         display:flex;
+         flex-direction:column;
+         width:300px;
+         background-color: white;
+         margin: 20px;
+         align-self: flex-start;
+     }
+     
+     .like-reblog-container{
+         
+         display:flex;
+         justify-content: space-around;
+         width:-webkit-fill-available;
+     }
+     
+     .polaroid-frame img{
+         
+         object-fit: contain;
+         width: 93%;
+     }
+     
+     .polaroid-frame p{
+         
+         align-self:center;
+     }
+
 @media (min-width:801px){
 
     .introduction{
@@ -359,6 +399,8 @@ h1::after{
         width: auto;
         object-fit: contain;
      }
+     
+     
 
 } 
     </style>
@@ -366,14 +408,15 @@ h1::after{
 <body>
     <header id="site-header">
         <address id="site-header-address">
-            <img src="{HeaderImage}" id="site-header-icon">
+            <a href="https://screenshots-from-comics-i-r-blog.tumblr.com/"><img src="{HeaderImage}" id="site-header-icon"></a>
             <a href="mailto:contacto.tattoohome@gmail.com">contacto.tattoohome@gmail.com</a>
             <section id="site-header-phone">
                 <i class="fa-brands fa-whatsapp"></i>
-                <a href="tel:640394026">+34 640394026</a>
+                <a href="https://wa.me/34640394026">+34 640394026</a>
             </section>
         </address>
     </header>
+    {block:HomePage}
     <main>
         <section id="intro-about-container">
             <section id="introduction">
@@ -410,46 +453,93 @@ h1::after{
             </div>
             <section id="gallery-see-more">
                 <p>¿Quieres ver más de mi trabajo?</p>
-                <button>Ver más fotos</button>
+                <button onclick="window.open('https://screenshots-from-comics-i-r-blog.tumblr.com/gallery', 'blank')" type=button>Ver más fotos</button>
             </section>
         </section>
     </main>
+    {/block:HomePage}
+    {block:PermalinkPage}
+    <div id="gallery-all"></div>
+    {/block:PermalinkPage}
     <footer id="site-footer">
-        <img src="{image:FooterImage}" id="footer-icon">
+        <a href="https://screenshots-from-comics-i-r-blog.tumblr.com/"><img src="{image:FooterImage}" id="footer-icon"></a>
         <p>©2023 by Brandeau</p>
         <a href="https://github.com/Brandeau" target="_blank"><img src="{image:githubIcon}" id="github-mark"></a>
     </footer>
 </body>
+<script   src="https://code.jquery.com/jquery-3.6.3.js"   integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="   crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://screenshots-from-comics-i-r-blog.tumblr.com/api/read/json"></script>
 <script>
+    
+function renderPageHome() {
+
     const leftArrowWrapper = document.getElementById("arrow-wrapper-left");
-const rightArrowWrapper = document.getElementById("arrow-wrapper-right");
-const gallery = document.getElementById("carrousel");
-const numOfImages = document.querySelectorAll(".gallery-images").length;
+    const rightArrowWrapper = document.getElementById("arrow-wrapper-right");
+    const gallery = document.getElementById("carrousel");
+    const numOfImages = document.querySelectorAll(".gallery-images").length;
 
-function scrollToTheRight() {
+    function scrollToTheRight() {
 
-    gallery.scrollBy({
-      left: gallery.offsetWidth / (numOfImages - 1),
-      top: 0,
-      behavior: "smooth",
-    });
+        gallery.scrollBy({
+        left: gallery.offsetWidth / (numOfImages - 1),
+        top: 0,
+        behavior: "smooth",
+        });
 
-}
+    }
 
-function scrollToTheLeft() {
- 
-    gallery.scrollBy({
-      left: -(gallery.offsetWidth / (numOfImages - 1)),
-      top: 0,
-      behavior: "smooth",
-    });
+    function scrollToTheLeft() {
+    
+        gallery.scrollBy({
+        left: -(gallery.offsetWidth / (numOfImages - 1)),
+        top: 0,
+        behavior: "smooth",
+        });
   
-
-  console.log(gallery.scrollTop);
 }
 
-leftArrowWrapper.addEventListener("click", scrollToTheLeft);
+        leftArrowWrapper.addEventListener("click", scrollToTheLeft);
 
-rightArrowWrapper.addEventListener("click", scrollToTheRight);
+        rightArrowWrapper.addEventListener("click", scrollToTheRight);
+}
+
+function renderPageGallery() {
+      const posts = tumblr_api_read.posts;
+        
+
+        posts.forEach(post => { 
+            
+            const container = $("<div></div>");
+            const likeAndReblog = $("<div></div>");
+            const date = $("<p></p>").text(post["date"]);
+            
+            if(post["regular-body"] !== undefined){
+
+                container.append(post["regular-body"]);
+                container.append(likeAndReblog);
+                likeAndReblog.append(post["reblog-button"]);
+                likeAndReblog.append(post["like-button"]);
+                container.append(date);
+                container.addClass("polaroid-frame");
+                likeAndReblog.addClass("like-reblog-container");
+               
+
+                $("#gallery-all").append(container);
+            }
+        });
+}
+
+const RENDER_BY_PAGE = {
+  "/": renderPageHome,
+  "/gallery": renderPageGallery,
+};
+
+const renderPage = RENDER_BY_PAGE[window.location.pathname];
+
+if (typeof renderPage === "function") {
+  renderPage();
+}
+
 </script>
+
 </html>

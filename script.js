@@ -1,3 +1,4 @@
+
 const leftArrowWrapper = document.getElementById("arrow-wrapper-left");
 const rightArrowWrapper = document.getElementById("arrow-wrapper-right");
 const gallery = document.getElementById("carrousel");
@@ -20,13 +21,10 @@ function scrollToTheLeft() {
       top: 0,
       behavior: "smooth",
     });
-  
-
-  console.log(gallery.scrollTop);
 }
 
 leftArrowWrapper.addEventListener("click", scrollToTheLeft);
 
 rightArrowWrapper.addEventListener("click", scrollToTheRight);
 
- 
+
