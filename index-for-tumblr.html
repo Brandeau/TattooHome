@@ -350,12 +350,19 @@ h1::after{
      .polaroid-frame img{
          
          object-fit: contain;
-         width: 93%;
+         width: 90%;
+         padding:10px;
+         
      }
      
      .polaroid-frame p{
          
          align-self:center;
+     }
+     
+     .polaroid-frame{
+         
+         align-items:center;
      }
 
 @media (min-width:801px){
@@ -408,7 +415,7 @@ h1::after{
 <body>
     <header id="site-header">
         <address id="site-header-address">
-            <a href="https://screenshots-from-comics-i-r-blog.tumblr.com/"><img src="{HeaderImage}" id="site-header-icon"></a>
+            <a href="/"><img src="{HeaderImage}" id="site-header-icon"></a>
             <a href="mailto:contacto.tattoohome@gmail.com">contacto.tattoohome@gmail.com</a>
             <section id="site-header-phone">
                 <i class="fa-brands fa-whatsapp"></i>
@@ -425,7 +432,7 @@ h1::after{
             <section id="about">
                 <h2>ARTISTA</h2>
                 <p id="artist-name">Patricia Yáñez</p>
-                <p>Interesada desde muy temprana edad en el dibujo y la pintura, descubrió tarde su pasión por el tatuaje. Ahora busca recuperar el tiempo perdido grabando en la piel de las personas sus deseos, ideales y recuerdos. Artista autodidacta que realiza tatuajes Old School, Tribales, puntillismo, minimalista, Kawaii tattoo, Geométrico, tattoo blackwork. </p>
+                <p>{Description}</p>
             </section>
         </section>
         <section id="gallery">
@@ -453,7 +460,7 @@ h1::after{
             </div>
             <section id="gallery-see-more">
                 <p>¿Quieres ver más de mi trabajo?</p>
-                <button onclick="window.open('https://screenshots-from-comics-i-r-blog.tumblr.com/gallery', 'blank')" type=button>Ver más fotos</button>
+                <button onclick=window.location.href="/gallery" type=button>Ver más fotos</button>
             </section>
         </section>
     </main>
@@ -462,13 +469,13 @@ h1::after{
     <div id="gallery-all"></div>
     {/block:PermalinkPage}
     <footer id="site-footer">
-        <a href="https://screenshots-from-comics-i-r-blog.tumblr.com/"><img src="{image:FooterImage}" id="footer-icon"></a>
+        <a href="/"><img src="{image:FooterImage}" id="footer-icon"></a>
         <p>©2023 by Brandeau</p>
         <a href="https://github.com/Brandeau" target="_blank"><img src="{image:githubIcon}" id="github-mark"></a>
     </footer>
 </body>
 <script   src="https://code.jquery.com/jquery-3.6.3.js"   integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="   crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://screenshots-from-comics-i-r-blog.tumblr.com/api/read/json"></script>
+<script type="text/javascript" src="https://tattoo-home.tumblr.com/api/read/json"></script>
 <script>
     
 function renderPageHome() {
@@ -511,7 +518,10 @@ function renderPageGallery() {
             
             const container = $("<div></div>");
             const likeAndReblog = $("<div></div>");
-            const date = $("<p></p>").text(post["date"]);
+            const date = $("<p></p>").text(new Date(post["unix-timestamp"] * 1000).toLocaleDateString('es-ES', 'full'));
+            const imageContainer = $("<img></img>");
+            
+            
             
             if(post["regular-body"] !== undefined){
 
@@ -524,6 +534,18 @@ function renderPageGallery() {
                 likeAndReblog.addClass("like-reblog-container");
                
 
+                $("#gallery-all").append(container);
+            }else{
+                
+                imageContainer.attr("src",post["photo-url-1280"]);
+                container.append(imageContainer);
+                container.append(likeAndReblog);
+                likeAndReblog.append(post["reblog-button"]);
+                likeAndReblog.append(post["like-button"]);
+                container.append(date);
+                container.addClass("polaroid-frame");
+                likeAndReblog.addClass("like-reblog-container");
+                
                 $("#gallery-all").append(container);
             }
         });
